@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+<title>TestingWebsite</title>
+<style>
+body {
+background:url("https://images.unsplash.com/photo-1501455708355-9bfae52b7dc3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=477e9771b3ad18c105bca1a6f9e43372&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb") 0 0/cover repeat fixed;
+}
+
+.card {
+display:none;
+font-family: "Josefin Sans", sans-serif;
+background:white;
+color:black;
+border-radius:20px;
+padding:24px;
+}
+
+.content {
+
+margin-top:58px;
+}
+
+.header {
+box-sizinh:border-radius;
+right:0;
+font-size:36px;
+text-align: center;
+font-family: "Josefin Sans", sans-serif;
+padding:16px;
+background:blue;
+color:white;
+top:0;
+left:0;
+position:fixed;
+z-index:99;
+width:inherit;
+height:4%;
+}
+
+#hamburgerMenu {
+cursor:pointer;
+width:32px;
+height:32px;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+<div class="header">
+<img id="hamburgerMenu" style="float:left;" src="http://www.stickpng.com/assets/images/588a64e0d06f6719692a2d10.png"></img>
+Lorem Ipsum
+</div>
+
+<div class="content" style="margin-top:0px">
+<div class="card">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel lorem sit amet diam dignissim euismod in eget nisi. Donec a rhoncus massa, eu imperdiet ex. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum sed ex in ligula tincidunt convallis. In nec mi metus. Curabitur felis mi, iaculis eu fermentum eget, molestie a lorem. Nullam eu augue id nisi pharetra sollicitudin. In efficitur, lacus at consectetur euismod, ipsum ex vestibulum enim, ac pulvinar nibh magna vitae tortor. Etiam libero diam, scelerisque sit amet tellus dapibus, tempus pellentesque neque. Integer pulvinar vitae odio non finibus. Donec quam nulla, cursus at nibh non, facilisis varius risus. Nulla tempus sit amet enim at interdum. Phasellus sed diam finibus, interdum odio vitae, finibus nisl. Donec pellentesque elementum ante et mattis.</div>
+</div>
+</body>
+
+<script>
+var bHamburgerOpen = false;
+// On page loaded
+$(function() {
+      setContentMargin();
+$(".card").fadeIn(500);
+
+$(window).on('resize', function(){
+     setContentMargin();
+});
+
+$("#hamburgerMenu").click(function() {
+if(bHamburgerOpen) {
+bHamburgerOpen = false;
+
+} else {
+bHamburgerOpen = true;
+
+}
+});
+
+});
+
+function setContentMargin() {
+$(".content").css("margin-top",$(".header").height()*2+8);
+}
+</script>
+</html>
